@@ -125,6 +125,7 @@ $rootScope.playlists[$rootScope.currentPlaylist.playlistsRang].content = $rootSc
     var rang = $rootScope.playlists.indexOf(list);
 
     $rootScope.currentPlaylist = $rootScope.playlists[rang];
+    saveStorage();
   };
 
   $ionicModal.fromTemplateUrl('templates/deleteList.html', function($ionicModal) {
