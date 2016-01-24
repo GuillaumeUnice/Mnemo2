@@ -29,8 +29,8 @@ a { text-decoration: none; }
 
 
 /* fond ecran */
-html, body, .body_bis, .view-container { 
-  background: url(../img/16.jpg) no-repeat center center fixed; 
+html, body, .body_bis, .view-container {
+  background: url(../img/16.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -48,8 +48,8 @@ ionic-timepicker {
 .item-thumbnail-left {
   min-height: 75px;
   /*background-color: red;
-  
-  background: url(../img/15.jpg) no-repeat center center fixed; 
+
+  background: url(../img/15.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -61,6 +61,35 @@ ionic-timepicker {
   max-width: 60px !important;
 }
 
+.item-icon-left {
+  font-size: 24px;
+}
+
+.button[name="bouton_ajout"] {
+  height: 100px !important;
+  width: 200px !important;
+  font-size: 20px !important;
+}
+
+.button{
+  height: 50px;
+  width: 120px;
+  font-size: 17px;
+}
+
+div[name="ajout_chanson_label"], div[name="horaire_label"]{
+  font-size: 17px;
+}
+
+input[type="text"]{
+  width: 200px;
+  height: 40px;
+}
+
+.button[name="bouton_valider_search"]{
+  width: 200px;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -70,7 +99,7 @@ ionic-timepicker {
   width: 100%;
   height: 100%;
   z-index: 50;
-  background-color: rgba(0,0,0,0.8); 
+  background-color: rgba(0,0,0,0.8);
 }
 
 
@@ -97,7 +126,7 @@ content {
   /*padding : 80px;*/
 }
 .modal {
-  background: url(../img/15.jpg) no-repeat center center fixed; 
+  background: url(../img/15.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -109,7 +138,7 @@ content {
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
 }
- 
+
 .video-container iframe,
 .video-container object,
 .video-container embed {
