@@ -1,0 +1,62 @@
+<ion-view view-title="PlaylistAdd">
+
+	<ion-content>
+	
+	<div class="bar bar-header bar-light">
+		<h1 class="title">Ajouter une chanson</h1>
+	</div>
+
+	<div class="body_bis">
+		<div class="row ">
+		 	<div class="col">
+		 		<form  name="search" ng-submit="sendSearch(query)" novalidate>
+					<div class="row">
+						<!--<label for="keyword" style="cursor: pointer; font-size: 1.1em; color: black; padding-right : 10px;">
+							Recherche
+						</label>-->
+						<input type="text" name="keyword" id="keyword" ng-model="query" placeholder="Tapez ici votre chanson!" required />
+
+					</div>
+					<div class="row">
+			  			<button type="submit" class="button button-block button-positive" ng-disabled="search.$invalid">
+						  Valider
+						</button>
+			 		</div>
+			 	</form>
+		 	</div>
+		  	<div class="col col-75">
+		  		<div class="row">
+		  			Appuyer sur une chanson pour la sélectionner, puis appuyer sur "Ajouter à la liste"
+		  		</div>
+				<div class="list" style="border: 3px solid $color2; padding-bottom: 10px; height: 65vh;  padding-bottom: 10px; overflow-y:scroll;">
+					<span ng-repeat="video in videos">
+
+					    <span ng-click="selectVideo(video)" ng-class="{'positive-bg' : video.selected}" class="item item-thumbnail-left item-button-right">
+					      <img src="{{ video.snippet.thumbnails.default.url }}">
+					      <h2>{{ video.snippet.title }}</h2>
+					      <!--<p>Edith Piaf</p>-->
+
+					      <!--<button class="button button-large button-positive">
+						      <i class="icon ion-volume-medium"></i>
+						  </button>-->
+			
+
+						  <!--<div class="button-bar">
+							<span class="button button-positive"><i class="icon ion-volume-medium"></i></span>
+							<span class="button button-positive"><i class="icon ion-checkmark"></i></span>
+						  </div>-->
+					    </span>
+
+					</span>
+				</div>
+				<div class="row">
+		  			<button ng-click="addVideos()" class="button button-block button-positive">
+					  Ajouter à liste
+					</button>
+		 		</div>
+		  	</div>
+		</div>
+	</div>
+
+	</ion-content>
+</ion-view>

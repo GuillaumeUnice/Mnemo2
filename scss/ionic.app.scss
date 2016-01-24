@@ -1,0 +1,123 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+@import "color";
+
+/* stop scroll */
+.scroll-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.scroll {
+  display: table-cell !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+body { color : $color1; }
+.bar { background-color : transparent !important;}
+.bar.bar-light { border-bottom: solid 3px $color1 !important;}
+.bar .title { font-size : 25px !important; color : $color1 !important; text-align: left !important;}
+
+a { text-decoration: none; }
+
+.body_bis { padding-top : 55px;}
+
+
+/* fond ecran */
+html, body, .body_bis, .view-container { 
+  background: url(../img/16.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pane, .view { background-color : transparent !important;}
+
+
+
+/* playlistCSS */
+ionic-timepicker {
+  margin: auto;
+}
+.item-thumbnail-left {
+  min-height: 75px;
+  /*background-color: red;
+  
+  background: url(../img/15.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}
+
+.item-thumbnail-left > img:first-child {
+  max-height: 55px !important;
+  max-width: 60px !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(0,0,0,0.8); 
+}
+
+
+
+
+
+
+
+
+label {
+  cursor: pointer;
+  font-size: 1.1em;
+  color: black;
+  padding-right : 10px;
+}
+
+
+
+
+/* overwrite bootstrap */
+content {
+  position : absolute;
+  margin-top : 55px !important;
+  /*padding : 80px;*/
+}
+.modal {
+  background: url(../img/15.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}

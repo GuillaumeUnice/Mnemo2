@@ -1,0 +1,26 @@
+<ion-view view-title="Setting">
+
+	<ion-content>
+	
+	<div class="bar bar-header bar-light">
+		<h1 class="title">Réglages</h1>
+	</div>
+
+	<div class="body_bis">
+
+	<div class="item range" style="margin-left : 30px; margin-right : 30px; margin-bottom : 40px;">
+	  <i class="icon ion-ios-moon" style="font-size: 50px;"></i>
+	  <input type="range" name="volume" id="sliderBar" min="0" max="1" step="0.1" ng-change="changeBrightness(i)" ng-model="i">
+	  <i class="icon ion-ios-sunny-outline" style="font-size: 50px;"></i>
+	</div>
+
+	<div class="item range" style="margin-left : 30px; margin-right : 30px;">
+	  <i class="icon ion-volume-low" style="font-size: 50px;"></i>
+	  <input type="range" name="volume" id="sliderBar" min="0" max="1" step="0.1" ng-model="v">
+	  <i class="icon ion-volume-high" style="font-size: 50px;"></i>
+	</div>
+
+	</div>
+	<!--<span>i: {{i}}</span>-->
+	</ion-content>
+</ion-view>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- ngCordova js -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- ionic/angularjs timepicker -->
+    <script src="lib/ionic-timepicker/dist/ionic-timepicker.bundle.min.js"></script>
+    <!-- ionic/angularjs datetimepicker -->
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <!-- ionic/angularjs localStorage -->
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+    <!-- app's js -->
+    <script src="js/app.js"></script>
+    <!-- filter's js -->   
+    <script src="js/filters/isEmpty.js"></script>
+    <!-- directives's js -->
+    <script src="js/directives/standardTimeMeridian.js"></script>
+
+    <!-- services's js -->
+    <script src="js/services/Series.js"></script>
+    <script src="js/services/Youtube.js"></script>
+    
+    <!-- controllers's js -->
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/controllers/playlistController.js"></script>
+    <script src="js/controllers/startController.js"></script>
+    <script src="js/controllers/settingsController.js"></script>
+    <script src="js/controllers/introController.js"></script>
+    
+    <!-- API Youtube -->
+    
+    <script>
+    /*function lol() {
+        console.log("Debut");
+        var request = gapi.client.youtube.search.list({
+                part : "snippet",
+                type : "video",
+                q : "lol",
+                maxResults : 3,
+                order : "viewCount"
+            });
+            request.execute(function(response){
+                var results = response.result;
+
+                console.log(results.items);
+            });
+    }*/
+    function init () {
+        //gapi.client.setApiKey("AIzaSyAJocfBaEV7ykLKJclh3ZNlLLbo2sGRquU");
+        gapi.client.setApiKey("AIzaSyB5S_fhqr_F4ItNhlPUAQmOxiFCatvVJKo");
+        gapi.client.load("youtube", "v3", function() {
+       //     lol();//yt Ready
+        });
+    }
+
+ document.addEventListener('deviceready', onDeviceReady);
+        function onDeviceReady() {
+            window.brightness = cordova.require("cordova.plugin.Brightness.Brightness");
+            var VolumeControl = cordova.plugins.VolumeControl;
+        }
+        function setBrightness(value) {
+            // value should be float in range from 0 to 1.
+            brightness.setBrightness(value, win, fail);
+        }
+        function getBrightness() {
+            // win([-1,0-1]) float 0-1 is a brightness level, -1 represents a system default
+            brightness.getBrightness( win, fail);
+        }
+        function win(status) {
+           // alert('Message: ' + status);
+        }
+        function fail(status) {
+            alert('Error: ' + status);
+        }
+
+
+    </script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+   
+  </head>
+  <body ng-app="starter">
+
+  <!--<ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>-->
+
+  <ion-nav-view>
+  </ion-nav-view>
+
+  </body>
+</html>
