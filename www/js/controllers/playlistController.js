@@ -22,7 +22,7 @@ app.controller('playlistController', function($scope, $rootScope, $http, $window
 
   $scope.videos = [];
 
-  //loadStorage();
+  loadStorage();
 
 /*document.addEventListener("deviceready", function () {
   alert("ok");

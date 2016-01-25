@@ -1,0 +1,63 @@
+<ion-view view-title="Playlist">
+
+	<ion-content>
+
+	<div class="bar bar-header bar-light">
+		<h1 class="title">Gestion des listes de chansons et horaires de lancement</h1>
+	</div>
+
+	<div class="body_bis">
+		<div class="row ">
+		 	<div class="col">
+     		<button class="button button-positive" ng-click="createListModal.show()" name="bouton_ajout">Ajouter une liste</button>
+		 	<div ng-if="$root.playlists.length !== 0">
+				<div class="row" name="horaire_label">Horaire actuel pour le lancement de cette liste</div>
+				<div class="row">
+					<ionic-timepicker input-obj="$root.currentPlaylist.time">
+					  <button class="button button-block button-positive overflowShow">
+					    <standard-time-meridian etime='$root.currentPlaylist.time.inputEpochTime'></standard-time-meridian>
+					  </button>
+					</ionic-timepicker>
+
+				</div>
+				<!--<div class="row">-->
+					<a href="#/playlistadd">
+				  	<button class="button button-full button-positive">
+					  Ajouter une chanson à la liste
+					</button>
+				</a>
+				<!--</div>-->
+			</div>
+		 	</div>
+		  	<div class="col col-75" ng-if="$root.playlists.length !== 0">
+		  		<div class="row">
+		  			<span ng-repeat="playlist in $root.playlists">
+			  			<button ng-click="changeList(playlist)" ng-class="{'positive-bg' : playlist.selected}" class="button button-block">
+						  Liste : {{ playlist.name }}
+						</button>
+					</span>
+		  		</div>
+		  		<div class="row">
+		  		<div class="button-bar">
+				  <span ng-click="renameListModal.show()" class="button button-positive">Renommer la liste</span>
+				  <span ng-click="deleteListModal.show()" class="button button-positive">Supprimer la liste</span>
+				</div>
+				</div>
+				<div class="list" style="border: 3px solid $color2; padding-bottom: 10px; height: 65vh;  padding-bottom: 10px; overflow-y:scroll;">
+				    <span class="item item-thumbnail-left item-button-right" ng-repeat="video in $root.currentPlaylist.content">
+				      <img src="{{ video.snippet.thumbnails.default.url }}">
+				      <h2>{{ video.snippet.title }}</h2>
+
+				      <button ng-click="deleteVideo(video)" class="button button-large button-positive">
+					      <i class="icon ion-trash-a"></i>
+					  </button>
+				    </span>
+				</div>
+		  	</div>
+		</div>
+	</div>
+
+<!--<iframe src="https://mp3skull.onl/api/youtube/frame/#/?id=EuQLMXyGQOE" style="width:100%;height:150px;" frameborder="0"></iframe>-->
+
+	</ion-content>
+</ion-view>
